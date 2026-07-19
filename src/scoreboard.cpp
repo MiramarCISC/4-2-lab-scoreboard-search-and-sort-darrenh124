@@ -26,7 +26,7 @@ double calculateAverage(const int scores[], int size) {
     // Otherwise, return the total divided by size.
 
 if (scores == nullptr || !isValidSize(size)) {
-    return 0;
+    return 0.0;
 }
 return static_cast<double>(calculateTotal(scores, size)) / size;
 }
@@ -35,10 +35,11 @@ int findLowest(const int scores[], int size) {
     // TODO:
     // If the array is null or the size is invalid, return 0.
     // Otherwise, return the smallest score.
-   if (scores == nullptr || !isValidSize(size)) {
-    return 0;
+    if (scores == nullptr || !isValidSize(size)) {
+        return 0;
     }
-    int lowest = scores[0]; for (int i = 1; i < size; i++)
+    int lowest = scores[0]; 
+    for (int i = 1; i < size; i++)
     {
         if (scores[i] < lowest) {
             lowest = scores[i];
