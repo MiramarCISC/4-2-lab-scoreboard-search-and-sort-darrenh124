@@ -4,11 +4,12 @@
 using namespace std;
 
 int calculateTotal(const int scores[], int size) {
-
-    if(scores == nullptr || !isValidSize(size))
+// Darren: Just added some brackets to the if statements for easier reading.
+    if(scores == nullptr || !isValidSize(size)) {
     return 0;
+    }
     int total = 0;
-    for(int i=0; i < size; i++){
+    for(int i = 0; i < size; i++){       // Darren: Add spacing for more consistentcy 
         total += scores[i];
         
     }
@@ -18,15 +19,17 @@ return total;
 double calculateAverage(const int scores[], int size) {
 
     
-    if(scores == nullptr || !isValidSize(size))
+    if(scores == nullptr || !isValidSize(size)) {
     return 0.0;
+    }
     return calculateTotal(scores, size) / size;
 }
 
 int findLowest(const int scores[], int size) {
     
-    if( scores == nullptr || !isValidSize(size))
+    if( scores == nullptr || !isValidSize(size)) {
     return 0;
+    }
     int lowest = scores[0];
     for(int i = 1; i < size; i++)
     if( scores[i] < lowest){
@@ -38,8 +41,9 @@ int findLowest(const int scores[], int size) {
 
 int findHighest(const int scores[], int size) {
 
-    if( scores == nullptr || !isValidSize(size))
+    if( scores == nullptr || !isValidSize(size)) {
     return 0;
+    }
     int highest = scores[0];
     for(int i = 1; i < size; i++)
     if( scores[i] > highest){
@@ -50,8 +54,9 @@ int findHighest(const int scores[], int size) {
 
 int findScore(const int scores[], int size, int target) {
 
-    if( scores == nullptr || !isValidSize(size))
+    if( scores == nullptr || !isValidSize(size)) {
     return -1;
+    }
     for( int i = 0; i < size; i++){
     if( scores[i] == target){
     return i;
@@ -61,8 +66,9 @@ int findScore(const int scores[], int size, int target) {
 }
 
 void sortScores(int scores[], int size) {
-    if(scores == nullptr || !isValidSize(size))
+    if(scores == nullptr || !isValidSize(size)) {
     return;
+    }
     for( int i = 0; i < size -1; i++){
         int lowest = i; 
         for (int j = i + 1; j < size; j++) {
